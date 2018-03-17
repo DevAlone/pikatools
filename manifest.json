@@ -1,0 +1,46 @@
+{
+    "manifest_version": 2,
+    "name": "pikatools",
+    "version": "1.0.0",
+    
+    "applications": {
+        "gecko": {
+            "id": "pikatools@d3d.info"
+        }
+    },
+    
+    "permissions": [
+        "*://pikabu.ru/*",
+        "storage"
+    ],
+
+    "description": "Прокачай свой пикабу",
+
+    "icons": {
+        "16": "icons/main.ico"
+    },
+
+    "background": {
+        "scripts": ["js/background.js"]
+    },
+
+    "content_scripts": [{
+        "matches": ["*://pikabu.ru/*"],
+        "js": ["js/content.js"],
+        "css": ["css/content.css"]
+    }],
+
+    "browser_action": {
+        "browser_style": true,
+        "default_icon": {
+            "16": "icons/main.ico"
+        }
+    },
+
+    "options_ui": {
+        "page": "pages/options.html",
+        "browser_style": true
+	}
+
+}
+
